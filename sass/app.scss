@@ -1,7 +1,15 @@
 /* apply a natural box layout model to all elements, but allowing components to change */
+@import "reset"
+
 html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+.clock {
+  height: 300px;
+  width: 300px;
+  border: 1px orange solid:
 }
