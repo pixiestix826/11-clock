@@ -12,4 +12,4 @@ var stylePath = [
 
 var styles = new Sass(stylePaths, 'app.scss', 'app.css');
 
-module.exports = new Merge(['public', styles], {overwrite: true});
+module.exports = new Merge(['public', styles, 'bower_components/font-awesome/fonts'], {overwrite: true});
