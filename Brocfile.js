@@ -2,7 +2,7 @@
 var Merge = require('broccoli-merge-trees');
 var Sass = require('broccoli-sass');
 
-var stylePath = [
+var stylePaths = [
   'sass',
   'bower_components/normalize-css',
   'bower_components/bourbon/app/assets/stylesheets',
