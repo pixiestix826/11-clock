@@ -1,5 +1,5 @@
 // Pulls in the `merge` function with NPM
-var Merge = require('broccoli-merge-tree');
+var Merge = require('broccoli-merge-trees');
 var Sass = require('broccoli-sass');
 
 var stylePath = [
