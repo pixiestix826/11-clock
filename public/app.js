@@ -1,13 +1,10 @@
-<!DOCTYPE html>
+(function() {
+  var currentTime = document.querySelector('.time');
+});
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Project Title</title>
-  <link rel="stylesheet" href="app.css">
-</head>
-<body>
-</body>
-</html>
+var d = new Date();
+d.toDateString();
+d.getHours();
+d.getMinutes();
+d.getSeconds();
+console.log(d);
