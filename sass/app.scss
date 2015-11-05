@@ -15,6 +15,7 @@ html {
 //** MAIN STYLING **//
 body {
   margin: 0;
+  background: purple;
 }
 
 .clock {
@@ -23,7 +24,7 @@ body {
   align-items: center;
 }
 
-.time, .color  {
+.time  {
   flex: 1;
   text-align: center;
   margin: auto;
