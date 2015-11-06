@@ -9,3 +9,6 @@ var colorBar = document.querySelector('.color');
     timer.innerHTML = curr;
   }, 1000);
 })();
+
+console.assert(padZeros(1) === '01');
+console.assert(padZeros(30) === '30');
