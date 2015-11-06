@@ -1,14 +1,27 @@
-var timer = document.querySelector('.time');
-var colorBar = document.querySelector('.color');
-
 (function() {
-  window.setInterval(() => {
-    var currentTime = new Date();
-    console.log(currentTime.toTimeString());
-    var curr = `${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`;
-    timer.innerHTML = curr;
-  }, 1000);
-})();
+  var clock = document.querySelector('.time');
+  var startTime = new Date();
+  console.log('First load', startTime);
+  window.setInterval(time, 1000);
 
-console.assert(padZeros(1) === '01');
-console.assert(padZeros(30) === '30');
+  function time() {
+    var currentTime = new Date();
+    console.log(currentTime);
+    var nowSec = padZeros(currentTime.getSeconds());
+    var nowMin = padZeros(currentTime.getMinutes());
+    var nowHour = padZeros(currentTime.getHours());
+
+    clock.innerHTML = `${nowHour}:${nowMin}:${nowSec}`;
+  }
+
+  function padZeros(time) { //if >10 add 0 in front of value.
+    if (time < 10) {
+      return '0' + time;
+    }
+
+    return time;
+  }
+
+  console.assert(padZeros(1) == '01');
+  console.assert(padZeros(30) == '30');
+})();
