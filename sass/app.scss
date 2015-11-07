@@ -16,7 +16,7 @@ html {
 body {
   margin: 0;
   background: purple;
-  font-family: 'Averia Sans Libre', cursive;
+
 }
 
 .clock {
@@ -24,13 +24,10 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  align-items: center;
 }
 
-.time  {
-  text-align: center;
-  font-size: 5rem;
-  color: white;
+.time {
+  display: flex;
 }
 
 .timer__bar {
@@ -39,5 +36,23 @@ body {
   background: white;
   width: 2rem;
   height: 1rem;
+}
+
+.time, .timer__bar, .color  {
+  font-size: 5rem;
   color: white;
+  font-family: 'Averia Sans Libre', cursive;
+}
+
+.color {
+  display: none;
+}
+
+.background__color:hover {
+  .color {
+    display: block;
+  }
+  .time {
+    display: none;
+  }
 }
