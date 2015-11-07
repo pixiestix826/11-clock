@@ -1,5 +1,6 @@
 (function() {
   var timer = document.querySelector('.time');
+  var colorGrad = document.querySelector('.color');
   var bar = document.querySelector('.timer__bar');
   var backgroundColor = document.querySelector('.clock');
 
@@ -11,16 +12,18 @@
     var now = `${nowHour}:${nowMin}:${nowSec}`;
     timer.innerHTML = now;
 
-    console.log(secColor);
-    console.log(minColor);
-    console.log(hourColor);
+    var secColor = toColorRange(nowSec, 60);
+    var minColor = toColorRange(nowMin, 60);
+    var hourColor = toColorRange(nowHour, 60);
 
-    backgroundColor.style.background = `rgb(${secColor}, ${minColor}, ${hourColor})`;
+    var colorVal = `rgb(${secColor}, ${minColor}, ${hourColor})`;
+
+    backgroundColor.style.background = colorVal;
+    colorGrad.innerHTML = colorVal;
     bar.style.width = (nowSec * 5 + 'rem');
   }, 1000);
 
   var toColorRange = (number, base) => {
-    return number / base * 255;
     return Math.floor(number / base * 255);
   };
 
