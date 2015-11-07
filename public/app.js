@@ -1,20 +1,17 @@
 (function() {
-  var clock = document.querySelector('.time');
-  var startTime = new Date();
-  console.log('First load', startTime);
-  window.setInterval(time, 1000);
-
-  function time() {
+  var timer = document.querySelector('.time');
+  var bar = document.querySelector('.timer__bar');
+  window.setInterval(() => {
     var currentTime = new Date();
-    console.log(currentTime);
-    var nowSec = padZeros(currentTime.getSeconds());
-    var nowMin = padZeros(currentTime.getMinutes());
     var nowHour = padZeros(currentTime.getHours());
+    var nowMin = padZeros(currentTime.getMinutes());
+    var nowSec = padZeros(currentTime.getSeconds());
+    var now = `${nowHour}:${nowMin}:${nowSec}`;
+    timer.innerHTML = now;
+  }, 1000);
+})();
 
-    clock.innerHTML = `${nowHour}:${nowMin}:${nowSec}`;
-  }
-
-  function padZeros(time) { //if >10 add 0 in front of value.
+function padZeros(time) { //if >10 add 0 in front of value.
     if (time < 10) {
       return '0' + time;
     }
@@ -22,6 +19,5 @@
     return time;
   }
 
-  console.assert(padZeros(1) == '01');
-  console.assert(padZeros(30) == '30');
-})();
+console.assert(padZeros(1) == '01');
+console.assert(padZeros(30) == '30');
