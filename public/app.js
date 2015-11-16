@@ -1,6 +1,6 @@
 (function() {
   var timer = document.querySelector('.time');
-  var colorGrad = document.querySelector('.color');
+  var colorSpan = document.querySelector('.color');
   var bar = document.querySelector('.timer__bar');
   var backgroundColor = document.querySelector('.clock');
 
@@ -16,11 +16,11 @@
     var minColor = toColorRange(nowMin, 60);
     var hourColor = toColorRange(nowHour, 60);
 
-    var colorVal = `rgb(${secColor}, ${minColor}, ${hourColor})`;
+    var colorVal = `rgb(${colorHour}, ${colorMin}, ${colorSec})`;
 
     backgroundColor.style.background = colorVal;
-    colorGrad.innerHTML = colorVal;
-    bar.style.width = (nowSec * 5 + 'rem');
+    colorSpan.innerHtml = colorVal;
+    bar.style.width = (nowSec * 5 + 'px');
   }, 1000);
 
   var toColorRange = (number, base) => {
