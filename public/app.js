@@ -12,11 +12,11 @@
     var now = `${nowHour}:${nowMin}:${nowSec}`;
     timer.innerHTML = now;
 
-    var secColor = toColorRange(nowSec, 60);
-    var minColor = toColorRange(nowMin, 60);
     var hourColor = toColorRange(nowHour, 60);
+    var minColor = toColorRange(nowMin, 60);
+    var secColor = toColorRange(nowSec, 60);
 
-    var colorVal = `rgb(${colorHour}, ${colorMin}, ${colorSec})`;
+    var colorVal = `rgb(${hourColor}, ${minColor}, ${secColor})`;
 
     backgroundColor.style.background = colorVal;
     colorSpan.innerHtml = colorVal;
