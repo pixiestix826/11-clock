@@ -19,7 +19,7 @@
     var colorVal = `rgb(${hourColor}, ${minColor}, ${secColor})`;
 
     backgroundColor.style.background = colorVal;
-    colorSpan.innerHtml = colorVal;
+    colorSpan.innerHTML = colorVal;
     bar.style.width = (nowSec * 5 + 'px');
   }, 1000);
 
