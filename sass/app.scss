@@ -1,7 +1,59 @@
 /* apply a natural box layout model to all elements, but allowing components to change */
+@import "bourbon";
+@import "neat";
+@import "normalize";
+
+$fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts";
+@import "font-awesome";
+
 html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
+}
+//** MAIN STYLING **//
+body {
+  margin: 0;
+  background: purple;
+
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.time {
+  display: flex;
+}
+
+.timer__bar {
+  display: block;
+  content: '';
+  background: white;
+  width: 2rem;
+  height: 0.3rem;
+}
+
+.time, .timer__bar, .color  {
+  font-size: 5rem;
+  color: white;
+  font-family: 'Averia Sans Libre', cursive;
+}
+
+.color {
+  display: none;
+}
+
+.container:hover {
+  .color {
+    display: block;
+  }
+  .time {
+    display: none;
+  }
 }
